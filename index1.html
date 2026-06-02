@@ -1,0 +1,198 @@
+<head>
+
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0px;
+
+        }
+
+        html {
+            margin: 0px;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        div {
+            background-color: bisque;
+            width: 400px;
+            margin-left: 400px;
+            border: 2px solid black;
+            margin-top: 20px;
+            padding: 10px;
+
+        }
+
+        table,
+        tr,
+        th {
+            border: 2px solid black;
+            border-collapse: collapse;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h1><b>Student attendance recorder</b></h1>
+        Name : <input type="name" id="name" placeholder="Student Name">
+        <br>
+        <br>
+        Mounth : <input type="month" id="month" placeholder="--/--/----">
+        <br>
+        <br>
+        Total classes: <input type=class id="totalclasses" placeholder=" ">
+        <br>
+        <br>
+        class attended: <input id="classattended" placeholder=" ">
+        <br>
+        <br>
+        <button id="btn" class="btn"> Add Record</button>
+        <br>
+
+    </div>
+    <br><br>
+
+    <div class="div1">
+        <h1>Student Attendeance Data</h1>
+
+        <table class="table">
+            <tr id="tr1">
+                <th>Nmae</th>
+                <th>Month</th>
+                <th> Total</th>
+                <th>Classes Attended</th>
+            </tr>
+            <tbody id="tbody"> </tbody>
+        </table>
+        <br>
+
+        <select id="select">selectAll
+            <option value="1" id="st1">table style 1</option>
+            <option value="2" id="st2">table style 2</option>
+            <option value="3" id="st3">table style 3</option>
+        </select>
+        <br>
+        <br>
+
+        <table class="table2">
+            <tr id="tr3">
+                <th>Nmae</th>
+                <th>Month</th>
+                <th> Total</th>
+                <th>Classes Attended</th>
+            </tr>
+        </table>
+
+        <button id="btn2">Backup Data </button>
+        <br>
+        <br>
+        <button id="btn3">Show Backup Data </button>
+        <p id="info"></p>
+
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+
+
+                let col1 = $("<td>")
+                let col2 = $("<td>")
+                let col3 = $("<td>")
+                let col4 = $("<td>")
+
+
+
+                let a = $("#name").val()
+                let b = $("#month").val()
+                let c = $("#totalclasses").val()
+                let d = $("#classattended").val()
+
+
+                col1.text(a)
+                col2.text(b)
+                col3.text(c)
+                col3.text(d)
+
+
+                let row = $("<tr>")
+
+                row.append(col1)
+                row.append(col2)
+                row.append(col3)
+                row.append(col4)
+
+                $(".table").append(row)
+
+
+
+            });
+
+            $(".table").css("background-color", "grey")
+            $(".table").css("width", "400px")
+            $(".table").css("text-align", "center;")
+
+
+
+
+
+            $("#select").change(function () {
+                let value = $(this).val();
+
+                if (value == "1") {
+                    $(".table").css("background", "#d6f5fd");
+                } else if (value == "2") {
+                    $(".table").css("background", "#dbf6c1");
+                } else if (value == "3") {
+                    $(".table").css("background", "#ffdfde");
+                }
+            });
+
+
+            $("#btn2s").click(function () {
+                $("#tr").hover(function () {
+
+                    $(this).css("box-shadow", "0px 0px 15px grey");
+
+
+                });
+
+            });
+
+            $("#btn2").click(function () {
+                $("#tbody").empty();
+
+                $("#table tr").each(function () {
+                    let row = $(this).html();
+                    $("#tbody").append(`<tr>${row}</tr>`);
+                });
+            });
+            $("#btn3").click(function () {
+                $("#table2").toggle();
+
+                if ($(this).text() === "Show Backup Data") {
+                    $(this).text("Hide Backup Data");
+                } else {
+                    $(this).text("Show Backup Data");
+                }
+            });
+        });
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

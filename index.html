@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            margin: 0px;
+        }
+
+        body {
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+
+        }
+        .container{
+            background-color: aliceblue;
+            height: 300vh;
+        }
+
+
+
+        .navbar {
+            background: linear-gradient(135deg, blue, #ff99ac);
+            width: 947px;
+            margin-top: 16px;
+
+
+        }
+
+        .navbar .child {
+            background: darkblue;
+            height: 40px;
+
+        }
+        .container2{
+            background-color: white;
+            margin-left: 29px;
+            padding: 10px;
+            margin-top: 31px;
+            height: 220px;
+            margin-right: 48px;
+            border-radius: 10px;
+            
+
+        }
+        .container3{
+            background-color: white;
+            height: 219px;
+            width: 376px;
+            margin-left: 31px;
+            border-radius: 10px;
+            transition: 10px 10px 1px 1px;
+        }
+
+        .container3 .btn:hover{
+            width: 380;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="h1" style=" margin-top: -6px; color: white; margin-left: 20px; padding: 2px;">
+                <h1> <b>Student dashboard</b></h1>
+
+                <p style="margin-top: -20px; ">welcome to your profile and activity page</p>
+            </div>
+
+            
+
+            <div class="child">
+                <div class="c1" style="font-size: 20px; margin:14px; color: white;">
+                    <p>Profile Skills Grade tool Usernamep</p>
+                    <a href="index1.html">new link</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container2">
+
+            <h1 style="color: blue;"> <b>Student Information </b></h1>
+            
+            <p id = "name"> </p>
+
+            <p id = "age"></p>
+
+            <p id="course"> </p>          
+                
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dignissimos possim</p>
+        </div>
+
+        <div class="container3">
+
+            <h1 style="color: blue;"> <b>Skill List</b></h1>
+            <p class="demo1"></p>
+
+            <p style="background-color: bisque;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, atque necessitatibus! </p>
+
+        </div>
+
+        <div class="container4">
+            <hr><b>Grade Calculator</b>
+            Enter mark (0 -300) <br>
+             <input id="marks" placeholder="e.g 78">
+             <button class="btn" onclick="percentage()" style="color: width ; background-color: blue; width: 136px; padding: 10px;">  Grade</button>
+            <p class="demo2"></p>
+
+
+        </div>
+    </div>
+
+    <script>
+        let name = "mehwish"
+        document.getElementById("name").innerHTML = "Name: " + name;
+
+        let age = "27"
+        document.getElementById("age").innerHTML = " Age :" + age;
+
+        let course = "BS Software Engineering"
+        document.getElementById("course").innerHTML = "Course :" + course;
+
+    
+
+        let tag = ["ali" , "hamza" , "abbas" , "akhtar" ]
+        let text = `<ol>`;
+         for(const x of tag){
+                text += `<li>${x}</li>`;
+
+            }
+            text += `</ol>`;
+            document.getElementById("demo1").innerHTML= text;
+
+
+
+        function percentage(){
+            let marks = (document).getElementById("marks").value;
+        
+            
+            if( marks >= 80 && marks <= 100){
+                document.getElementById("rezult").innerHTML = "grade A";
+            }
+
+            else if(marks <= 80 && marks >= 40 ){
+                document.getElementById("rezult").innerHTML = "grade B";
+            }
+
+            else{
+                document.getElementById("rezult").innerHTML=" fails";
+            }
+
+            document.getElementById("demo2").innerHTML = percantage;
+        }
+
+
+
+
+        
+    </script>
+
+</body>
+
+</html>
